@@ -27,11 +27,11 @@ pipeline {
         stage("UPDATE K8S DEPLOYMENT FILES AND PUSH TO THE GIT REPO"){
             steps{
 
-                sh 'cat ./k8s/auth-deployment.yml'
+                sh 'cat ./k8s/server-deployment.yml'
                 sh "sed -i 's/${CLIENT_APP_NAME}.*/${CLIENT_APP_NAME}:${IMAGE_TAG}/g' ./k8s/client-deployment.yml"
                 sh "sed -i 's/${SERVER_APP_NAME}.*/${SERVER_APP_NAME}:${IMAGE_TAG}/g' ./k8s/server-deployment.yml"
                 sh "sed -i 's/${WORKER_APP_NAME}.*/${WORKER_APP_NAME}:${IMAGE_TAG}/g' ./k8s/worker-deployment.yml"
-                sh 'cat ./k8s/client-deployment.yml'
+                sh 'cat ./k8s/server-deployment.yml'
 
       
 
