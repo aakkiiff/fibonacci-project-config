@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: aakkiiff/fibonacci-worker
+          image: aakkiiff/fibonacci-worker:11
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
